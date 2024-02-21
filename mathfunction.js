@@ -1,0 +1,20 @@
+let r;
+r=Math.PI;
+console.log(r);
+let e=Math.E;
+console.log(e);
+e=Math.round(3.4);
+console.log(e);
+e=Math.round(3.9);
+console.log(e);
+e=Math.floor(3.9);
+console.log(e);
+e=Math.ceil(3.9);
+console.log(e);
+e=Math.random();
+console.log(e);
+e=Math.floor(Math.random()*50+1);
+console.log(e);
+e=Math.sign(-90);
+console.log(e);
+

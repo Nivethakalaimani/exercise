@@ -1,0 +1,20 @@
+concat
+replace
+slice
+touppercase
+tolowercase
+substring
+replace
+startswith
+indexof
+charAt
+charCodeAt
+lastindexof
+includes similar to contains in java
+trim
+padstart  a.padStart(4,0) =0005
+padend     a.padEnd(4,0)  =5000
+\ represent line ending
+charAtcode
+fromcharcode used to convert ascii value to character
+toFixed

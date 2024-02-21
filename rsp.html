@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <p>TODO LIST</p>
+        <input type="text" id="inputtext">
+        <button onclick="show()">ADD</button>
+        <div id="showlist"></div>
+        <script>
+            const todo = [];
+            
+            function display() {
+                let displaylist = '';
+                for (let i = 0; i < todo.length; i++) {
+                    let htmllist = `<p>${todo[i]}</p>`;
+                    displaylist += htmllist;
+                }
+                document.getElementById("showlist").innerHTML = displaylist;
+            }
+    
+            function show() {
+                let item = document.getElementById("inputtext").value;
+                todo.push(item);
+                document.getElementById("inputtext").value = "";
+                display();
+            }
+        </script>
+    </body>
+    </html>
+    
+</body>
+</html>

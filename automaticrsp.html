@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="play(0)">rock</button>
+    <button onclick="play(1)" >paper</button>
+    <button onclick="play(2)">scissor</button>
+    <button onclick="resetscore()">reset the game</button>
+    <button onclick="autoplay()">AUTOPLAY</button>
+    <p id="result"></p>
+    <p id="cur"></p>
+    <p id="win"></p>
+    <p id="los"></p>
+    <p id="tie"></p>
+    <script>
+        let score=localStorage.getItem('scoreboard')?
+        JSON.parse(localStorage.getItem('scoreboard')):{win:0,
+            los:0,
+            tie:0};
+        // let score = {
+        //     win: 0,
+        //     los: 0,
+        //     tie: 0
+        // };
+
+        // // Check if 'scoreboard' exists in localStorage, otherwise initialize with default values
+        // if (localStorage.getItem('scoreboard')) {
+        //     score = JSON.parse(localStorage.getItem('scoreboard'));
+        // }
+        function display(){
+            document.getElementById("win").innerHTML=`wins:${score.win}`;
+          document.getElementById("los").innerHTML=`loss:${score.los}`;
+          document.getElementById("tie").innerHTML=`tie:${score.tie}`;
+        }
+        function resetscore(){
+            localStorage.removeItem('scoreboard');
+            score={win:0,
+            los:0,
+            tie:0};
+            localStorage.setItem('scoreboard',JSON.stringify(score));
+            document.getElementById("result").innerHTML="";
+            document.getElementById("cur").innerHTML="";
+            display();
+            
+        }
+        function play(n){
+        let i=n;
+        let c= Math.floor(Math.random()*3);
+        let you=(i==0)?"ROCK":(i==1)?"PAPER":"SCISSOR";
+        let com=(c==0)?"ROCK":(c==1)?"PAPER":"SCISSOR";
+        document.getElementById("cur").innerHTML=`You ${you} : Computer ${com}`;
+       
+       
+       if((i==0 && c==2) || (i==1 && c==0) || (i==2 && c==1))
+       {
+          score.win+=1;
+          document.getElementById("result").innerHTML="You WIN";
+       }
+       else if(i!=c){
+        score.los+=1;
+        document.getElementById("result").innerHTML="You LOSE";
+       }
+       else{
+        score.tie+=1;
+        document.getElementById("result").innerHTML="TIE";
+       }
+       let sco=JSON.stringify(score);
+       localStorage.setItem('scoreboard',sco);
+      display();
+    }
+    let autoplaying=false;
+    let intervalnum;
+    function autoplay(){
+      if(!autoplaying) {
+        intervalnum=setInterval(function(){
+            let n=Math.floor(Math.random()* 3);
+            play(n);
+        },2000);
+        autoplaying=true;
+      } 
+      else{
+        clearInterval(intervalnum);
+        autoplaying=false;
+      }
+        
+
+    }
+    display();
+    </script>
+</body>
+</html>

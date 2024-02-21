@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>TODO LIST</p>
+    <input type="text" id="inputtext">
+    <input type="date" id="inputdate">
+    <button onclick="show()">ADD</button>
+    <div id="showlist">
+
+    </div>
+    <script>
+        const todo=[];
+        
+        function display(){
+                let displaylist='';
+                //const {name,time}=todo;
+              for(let i=0;i<todo.length;i++)
+              {
+                let htmllist=`<p>${todo[i].name}${todo[i].time}<button onclick="todo.splice(${i},1);
+                    display();">DELETE</button></p>`;
+                displaylist+=htmllist;
+              }
+              document.getElementById("showlist").innerHTML=displaylist;
+            }
+            function show(){
+                let item=document.getElementById("inputtext").value;
+                let itdate=document.getElementById("inputdate").value;
+                todo.push({name:item,
+                time:itdate});
+                
+                document.getElementById("inputtext").value="";
+                document.getElementById("inputdate").value="";
+                display();
+            }
+            
+          
+    </script>
+</body>
+</html>

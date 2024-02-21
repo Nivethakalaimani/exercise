@@ -1,0 +1,50 @@
+let a=new Array();
+forEach()
+ it contains three parameters value,index,array
+map() used to modify in array
+slice()
+splice() is to remove element in array
+it will change original array  splice(start,lenght,new element)
+concat()
+sort((a,b)=>{
+    return a-b;  // ascending
+    return b-a    // descending
+})
+fill(value,start,end)
+includes(value,startindex)
+join() - convert array to string 
+    default ,k
+reverse()
+reverse in object
+Array.prototype.reverse();
+push()
+pop()
+shift()
+unshift()
+indexOf()
+lastIndexOf()
+every() AND
+some() OR
+filter used to create new array
+
+OBJECT CLONE
+Object.assign()   or spread operator ...
+
+ARRAY CLONE
+spread operator
+slice
+concat
+Array.from
+JSON.parse() JSON.stringify()
+
+arguments -- arbitary arguments used to collect input from user in runtime
+
+let a=funtion(b,c){
+
+}
+let a=(b,c)-->{
+    
+}
+
+To avoid object modify in const we can freeze the object to avoid changes
+Object.freeze(user);

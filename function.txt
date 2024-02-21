@@ -1,0 +1,28 @@
+Generator function
+ It can return multiple values one after the other
+ function*
+ next() - return two property
+  value:
+  done:true or fals
+  function* generatefun(){
+            yield 1;
+            yield 2;
+           
+            return 4;
+        }
+        let generator=genppatefun();
+        let one=generator.next();
+        console.log(one);
+        let two=generator.next();
+        console.log(two);
+        let the=generator.next();
+        console.log(the);
+
+predefined function
+eval - evaluates a string and  return string
+parseInt -parse value as a string and return int value
+parseInt(value,radix) radix - binary,decimal,octal,hexadecimal
+parseFloat
+escape- it takes string as a parameter and encodes it so it can transmit to any computer in any network which supports ascii characters
+it encodes all special character except @+-./*_
+unescape()- it takes string as a parameter and decode the string which is encoded by escape function

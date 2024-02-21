@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>Product value</p>
+    <input type="number" name="cost" id="cost">
+    <button onclick="calcu()">calculate</button>
+    <p id="total"></p>
+    <script>
+       function calcu()
+       {
+          let value=document.getElementById("cost").value;
+          let total=Number(value);
+          if(value<200)
+          {
+             total+=40;
+          }
+          document.getElementById("total").innerHTML=`Total cost: ${total}`;
+       }
+    </script>
+</body>
+</html>
